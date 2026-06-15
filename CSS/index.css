@@ -1,0 +1,350 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ГЛАВНАТА МРЕЖА (GRID) */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 колони */
+}
+
+/* ВСЕКИ ГЛАВЕН ЕЛЕМЕНТ ЗАЕМА ЦЕЛИЯ РЕД (12 колони) */
+.main-header, .hero-section, .promo-title, .promo-items, .main-footer {
+    grid-column: span 12;
+}
+
+/* РЕД 1: HEADER СТИЛОВЕ */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+}
+
+.logo img {
+    height: 115px;
+    width: auto;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #3d2b1f;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.main-nav a:hover {
+    background-color: #EBDCAB;
+    border-radius: 50px;
+	color: #827C69;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-order {
+    background-color: #F2E7D0;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 15px;
+    border-radius: 50px;
+}
+
+.btn-signup {
+    text-decoration: none;
+    border: 2px solid #3d2b1f;
+    color: #3d2b1f;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+ /* ЕФЕКТ ПРИ ПОСОЧВАНЕ */
+
+.btn-order:hover {
+
+    background-color: #E6DABA; /* Златно при посочване */
+    transform: scale(1.1); /* Леко се увеличава за ефект */
+} 
+  
+.btn-signup:hover {
+
+    background-color: #E6DABA; /* Златно при посочване */
+    transform: scale(1.1); /* Леко се увеличава за ефект */
+
+} 
+
+/* РЕД 2: HERO СЕКЦИЯ */
+.hero-section {
+    
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+ .hero-text h1 {
+    font-family: 'Playfair Display', serif; /* Луксозен шрифт с чертички */
+    font-size: 55px;
+    font-weight: 700;
+    font-style: italic; /* Наклонен за повече стил */
+    color: #3d2b1f;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+ 
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #EBDCAB;
+    color: #3d2b1f;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+.cta-button:hover {
+
+    background-color: #E6DABA; /* Златно при посочване */
+    transform: scale(1.1); /* Леко се увеличава за ефект */
+} 
+
+/* РЕД 3: ПРОМОЦИИ ЗАГЛАВИЕ */
+.promo-title {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #fdfdfd;
+}
+
+.promo-title h2 {
+    font-size: 32px;
+    color: #3d2b1f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* РЕД 4: 5 КАРТИНКИ В МРЕЖА */
+.promo-items {
+	grid-column: span 12;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* ТУК ГИ ДЕЛИМ НА 5 */
+    gap: 10px;
+    padding: 0 40px 40px;
+}
+
+ .item {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column; /* Подрежда картинката и текста един под друг */
+    align-items: center;
+	justify-content: flex-start;
+    height: auto; /* Кутията сама ще се разпъне спрямо съдържанието */
+}
+.img-wrapper {
+    position: relative; /* За да позиционираме бутона вътре */
+    width: 100%;
+    height: 450px; /* Фиксираме височината на картинката */
+    overflow: hidden; /* Реже всичко, което излиза от рамката (при уголемяване) */
+    border-radius: 15px; /* Заобляме рамката */
+    margin-bottom: 15px; /* Разстояние до текста отдолу */
+    cursor: pointer; /* Сменя курсора на ръчичка */
+}
+
+.item img {
+    width: 100%;
+    height: 450px; /* Фиксираме само височината на картинката, за да са равни */
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 10px; /* Малко разстояние преди текста */
+	transition: all 0.4s ease; /* Плавен ефект за всичко */
+   
+} 
+/* ЕФЕКТ ПРИ МИНАВАНЕ НА МИШКАТА ВЪРХУ РАМКАТА (img-wrapper) */
+/* 1. Картинката се уголемява малко */
+/* 2. Картинката се замаглява */
+.img-wrapper:hover img {
+    transform: scale(1.05); /* Уголемяване с 5% */
+    filter: blur(3px); /* Плавно замъгляване */
+    opacity: 0.8; /* Леко изсветляване за по-добър контраст с бутона */
+}
+
+/* БУТОНЪТ "ПОРЪЧАЙ" НАД КАРТИНКАТА */
+.order-btn-promo {
+     font-family: 'DM Serif Display', serif;
+    position: absolute; /* ВАЖНО: Заковава го над картинката */
+    top: 50%; /* Центрира вертикално */
+    left: 50%; /* Центрира хоризонтално */
+    transform: translate(-50%, -50%) scale(0.8); /* Премества бутона доцентъра и го прави малко по-малък */
+    
+    background-color: rgba(209, 155, 67, 0.9); /* Твоят карамелен цвят с лека прозрачност */
+    color: #fff; /* Бял текст */
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+     
+
+    
+    /* СКРИВАМЕ БУТОНА ПО ПОДРАЗБИРАНЕ */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease; /* Плавно появяване */
+}
+
+/* ЕФЕКТ ПРИ МИНАВАНЕ НА МИШКАТА ВЪРХУ РАМКАТА (img-wrapper) */
+/* БУТОНЪТ СЕ ПОЯВЯВА */
+.img-wrapper:hover .order-btn-promo {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1); /* Връща нормалния размер при появяване */
+}
+
+/* ЕФЕКТ ПРИ МИНАВАНЕ НА МИШКАТА ВЪРХУ САМИЯ БУТОН */
+.order-btn-promo:hover {
+    background-color: #4a3427; /* Сменя цвета на тъмно кафяв */
+    transform: translate(-50%, -50%) scale(1.05); /* Уголемява леко само бутона */
+}
+
+ .item-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрира заглавието спрямо цената */
+    margin-top: 10px;    /* Разстоянието между снимката и текста */
+}
+
+.item-text h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #4a3427;
+}
+
+.item-text p {
+    margin: 5px 0 0 0;
+	font-size: 1.5rem;
+    color: #D19B43;
+    font-weight: bold;
+}
+
+/* РЕД 5: FOOTER */
+.main-footer {
+    background-color: #3d2b1f;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px;
+}
+
+ /* Основният контейнер се разпъва по целия екран */
+.hero-grid-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%; /* Леко вътрешно разстояние от краищата на екрана */
+    box-sizing: border-box;
+}
+
+  
+
+ /* ТОВА Е ЗА ТЕЛЕФОНИ */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column; /* Подрежда Лого, Меню и Бутони един под друг */
+        gap: 20px;
+        padding: 20px 10px;
+        height: auto; /* Позволява на хедъра да се разпъне според съдържанието */
+    }
+
+    .logo img {
+        height: 80px; /* Малко по-малко лого за телефон */
+        margin-bottom: 10px;
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Home, Menu, About Us стават едно под друго */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .main-nav a {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    .header-actions {
+        width: 100%; /* Заемат целия ред */
+        justify-content: center; /* Центрира количката и Sign Up */
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    /* Оправяме снимката за телефон */
+    .hero-section {
+        height: 400px; /* По-ниска снимка, за да не скролваме вечно */
+		
+    }
+
+    .hero-text h1 {
+        font-size: 28px; /* По-малък шрифт, за да не излиза от екрана */
+    }
+	 
+    /* Оправяме 5-те промоции - да станат 1 или 2 на ред */
+    .promo-items {
+        grid-template-columns: 1fr; /* По една промоция на ред */
+        padding: 20px;
+    }
+    .hero-grid-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        height: 100%;
+    }
+    .hero-column {
+        width: 100%;
+        height: auto;
+        position: absolute; /* Заключваме блоковете на точни позиции */
+        left: 0;
+        justify-content: center;
+    }
+     .left-side {
+        top: 35px; /* Разстояние от горния ръб на банера */
+    }
+
+    /* Долната дума отива най-долу */
+    .right-side {
+        bottom: 35px; /* Разстояние от долния ръб на банера */
+    }
+    .middle-space {
+        display: none; /* Скрива празната кутия на телефони */
+    }
+     
+}
+ 

@@ -1,0 +1,306 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ГЛАВНАТА МРЕЖА (GRID) */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 колони */
+}
+
+/* ВСЕКИ ГЛАВЕН ЕЛЕМЕНТ ЗАЕМА ЦЕЛИЯ РЕД (12 колони) */
+.main-header, .hero-section, .promo-title, .promo-items, .main-footer {
+    grid-column: span 12;
+}
+
+/* РЕД 1: HEADER СТИЛОВЕ */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+}
+
+.logo img {
+    height: 115px;
+    width: auto;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #3d2b1f;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+.main-nav a:hover {
+    background-color: #EBDCAB;
+    border-radius: 50px;
+	color: #827C69;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-order {
+    background-color: #F2E7D0;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 15px;
+    border-radius: 50px;
+}
+
+.btn-signup {
+    text-decoration: none;
+    border: 2px solid #3d2b1f;
+    color: #3d2b1f;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+ /* ЕФЕКТ ПРИ ПОСОЧВАНЕ */
+
+.btn-order:hover {
+
+    background-color: #E6DABA; /* Златно при посочване */
+    transform: scale(1.1); /* Леко се увеличава за ефект */
+} 
+  
+.btn-signup:hover {
+
+    background-color: #E6DABA; /* Златно при посочване */
+    transform: scale(1.1); /* Леко се увеличава за ефект */
+
+} 
+/* РЕД 2: HERO СЕКЦИЯ */
+.hero-section {
+    
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+ .hero-text h1 {
+    font-family: 'Playfair Display', serif; /* Луксозен шрифт с чертички */
+    font-size: 55px;
+    font-weight: 700;
+    font-style: italic; /* Наклонен за повече стил */
+    color: #3d2b1f;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+ 
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #EBDCAB;
+    color: #3d2b1f;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+.cta-button:hover {
+
+    background-color: #E6DABA; /* Златно при посочване */
+    transform: scale(1.1); /* Леко се увеличава за ефект */
+} 
+
+
+.item-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрира заглавието спрямо цената */
+    margin-top: 10px;    /* Разстоянието между снимката и текста */
+}
+
+.item-text h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #4a3427;
+}
+
+.item-text p {
+    margin: 5px 0 0 0;
+	font-size: 1.5rem;
+    color: #D19B43;
+    font-weight: bold;
+}
+.left-banner-text {
+    position: absolute;
+    top: 40%;
+    left: 8%;                  /* Бута го наляво */
+    transform: translateY(-50%); /* Центрира го перфектно нагоре-надолу */
+    color: #4a3319;            /* Твоят красив кафяв цвят */
+    font-family: 'Playfair Display', serif; /* Или шрифта, който ползваш */
+    font-size: 2.8rem;
+    line-height: 1.2;
+    z-index: 5;
+}
+ 
+.about-details-section {
+    max-width: 1500px;
+    margin: 70px auto;
+    padding: 0 50px;
+}
+
+.about-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 160px; /* Разстояние между секциите */
+    gap: 70px;
+}
+
+/* 🌟 АВТОМАТИЧНО ОБРЪЩАНЕ НА ВСЕКИ ВТОРИ РЕД */
+.about-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.about-col-text {
+    flex: 1;
+}
+
+.about-col-text h3 {
+    color: #a8876e;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.about-col-text h2 {
+    font-size: 2.2rem;
+    color: #222;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.about-col-text p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.about-col-img {
+    flex: 1;
+}
+
+.about-col-img img {
+    width: 80%;
+    height: 300px;
+    object-fit: cover; /* Снимката ще пасне перфектно без да се разтегля */
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.main-footer {
+    background-color: #3d2b1f;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px;
+}
+
+ /* Основният контейнер се разпъва по целия екран */
+.hero-grid-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%; /* Леко вътрешно разстояние от краищата на екрана */
+    box-sizing: border-box;
+}
+
+
+/* ТОВА Е ЗА ТЕЛЕФОНИ */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column; /* Подрежда Лого, Меню и Бутони един под друг */
+        gap: 20px;
+        padding: 20px 10px;
+        height: auto; /* Позволява на хедъра да се разпъне според съдържанието */
+    }
+
+    .logo img {
+        height: 80px; /* Малко по-малко лого за телефон */
+        margin-bottom: 10px;
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Home, Menu, About Us стават едно под друго */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .main-nav a {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    .header-actions {
+        width: 100%; /* Заемат целия ред */
+        justify-content: center; /* Центрира количката и Sign Up */
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    /* Оправяме снимката за телефон */
+    .hero-section {
+        height: 400px; /* По-ниска снимка, за да не скролваме вечно */
+		
+    }
+
+    .hero-text h1 {
+        font-size: 28px; /* По-малък шрифт, за да не излиза от екрана */
+    }
+
+      .about-row, .about-row:nth-child(even) {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 50px;
+        
+    }
+
+    .left-banner-text {
+    position: absolute;
+    top: 43%;
+    left: 8%;                  /* Бута го наляво */
+    transform: translateY(-50%); /* Центрира го перфектно нагоре-надолу */
+    color: #4a3319;            /* Твоят красив кафяв цвят */
+    font-family: 'Playfair Display', serif; /* Или шрифта, който ползваш */
+    font-size: 2.8rem;
+    line-height: 1.2;
+    z-index: 5;
+}
+
+}
+	 
+     
+
+ 
